@@ -8,7 +8,7 @@
       class="bg-transparent"
     >
       <q-toolbar>
-        <q-toolbar-title>
+        <q-toolbar-title v-if="$q.screen.gt.xs">
           <q-img
             src="~assets/logo.png"
             width="48px"
@@ -17,35 +17,35 @@
         <q-btn
           label="Intro"
           to="intro"
-          size="lg"
+          :size="$q.screen.xs ? `md` : `lg`"
           color="primary"
           flat
         />
         <q-btn
           label="About"
           to="about"
-          size="lg"
+          :size="$q.screen.xs ? `md` : `lg`"
           color="primary"
           flat
         />
         <q-btn
           label="Works"
           to="works"
-          size="lg"
+          :size="$q.screen.xs ? `md` : `lg`"
           color="primary"
           flat
         />
         <q-btn
           label="Skills"
           to="skills"
-          size="lg"
+          :size="$q.screen.xs ? `md` : `lg`"
           color="primary"
           flat
         />
         <q-btn
           label="Contact"
           to="contact"
-          size="lg"
+          :size="$q.screen.xs ? `md` : `lg`"
           color="primary"
           flat
         />

@@ -1,7 +1,7 @@
 <template>
   <div class="row full-width">
     <q-form
-      class="offset-2 col-4"
+      class="col-9 offset-md-2 col-md-4"
       @submit.prevent="onSubmit"
     >
       <div class="title">
@@ -42,7 +42,7 @@
           type="submit"
           label="Submit"
           color="white"
-          size="xl"
+          :size="$q.screen.xs ? `md`: `xl`"
           outline
           rounded
           class="q-px-xl"

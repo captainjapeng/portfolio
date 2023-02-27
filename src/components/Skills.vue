@@ -1,6 +1,6 @@
 <template>
   <div class="row full-width">
-    <div class="offset-2 col-4">
+    <div class="col-9 offset-md-2 col-md-4">
       <div class="title">
         My Skills
       </div>
@@ -12,7 +12,7 @@
           <q-btn
             label="Explore"
             color="white"
-            size="xl"
+            :size="$q.screen.xs ? `md`: `xl`"
             outline
             rounded
             class="q-px-xl"
@@ -21,7 +21,7 @@
           <q-btn
             label="Contact Me"
             color="white"
-            size="xl"
+            :size="$q.screen.xs ? `md`: `xl`"
             outline
             rounded
             class="q-px-xl"
@@ -34,7 +34,6 @@
 
   <q-dialog
     v-model="visible"
-    persistent
     maximized
   >
     <background class="bg-black absolute-full" />
@@ -59,11 +58,14 @@
             :key="idx"
             class="row q-col-gutter-md q-mt-sm"
           >
-            <div class="offset-1 col-2 galaxy-name text-primary text-weight-bolder q-mt-sms q-mb-xs">
+            <div class="col-12 offset-md-1 col-md-2 galaxy-name text-primary text-weight-bolder q-mt-sms q-mb-xs">
               {{ galaxy.name }}
             </div>
             <div class="col">
-              <div class="row q-col-gutter-md">
+              <div
+                class="row q-col-gutter-md"
+                :class="{'justify-center': $q.screen.lt.md}"
+              >
                 <div
                   v-for="content, contentIdx in galaxy.contents"
                   :key="`${idx}-${contentIdx}`"
@@ -71,7 +73,7 @@
                 >
                   <q-avatar
                     rounded
-                    size="64px"
+                    :size="$q.screen.xs ? `48px` :`64px`"
                   >
                     <q-img
                       v-if="content.icon"
@@ -189,4 +191,16 @@ export default defineComponent({
 
   :deep(img)
     filter: drop-shadow(0 0 2px rgba(black, 0.5))
+
+@media screen and (max-width: $breakpoint-sm-max)
+  .galaxy-name
+    font-size: 18px
+    text-align: center
+
+  .content
+    font-size: 12px
+    line-height: 12px
+    text-align: center
+    width: 20%
+
 </style>

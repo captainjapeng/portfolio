@@ -1,6 +1,6 @@
 <template>
   <div class="row full-width">
-    <div class="offset-6 col-5">
+    <div class="col-9 offset-md-6 col-md-5">
       <div class="title">
         My works
       </div>
@@ -12,7 +12,7 @@
           <q-btn
             label="Explore"
             color="white"
-            size="xl"
+            :size="$q.screen.xs ? `md`: `xl`"
             outline
             rounded
             class="q-px-xl"
@@ -21,7 +21,7 @@
           <q-btn
             label="See my skills"
             color="white"
-            size="xl"
+            :size="$q.screen.xs ? `md`: `xl`"
             outline
             rounded
             class="q-px-xl"
@@ -34,7 +34,6 @@
 
   <q-dialog
     v-model="visible"
-    persistent
     maximized
   >
     <background class="bg-black absolute-full" />

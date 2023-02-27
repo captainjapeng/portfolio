@@ -1,6 +1,6 @@
 <template>
   <div class="row full-width">
-    <div class="offset-2 col-4">
+    <div class="col-9 offset-md-2 col-md-4">
       <div class="title">
         Hi I'm Jasper!
       </div>
@@ -12,7 +12,7 @@
         <q-btn
           label="Begin Journey"
           color="white"
-          size="xl"
+          :size="$q.screen.xs ? `md`: `xl`"
           outline
           rounded
           class="q-px-xl"

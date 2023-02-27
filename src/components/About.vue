@@ -1,6 +1,6 @@
 <template>
   <div class="row full-width">
-    <div class="offset-6 col-5">
+    <div class="col-9 offset-md-6 col-md-5">
       <div class="title">
         About Myself
       </div>
@@ -29,7 +29,7 @@
         <q-btn
           label="Know about my works"
           color="white"
-          size="xl"
+          :size="$q.screen.xs ? `md`: `xl`"
           outline
           rounded
           class="q-px-xl"

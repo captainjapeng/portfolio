@@ -1,6 +1,7 @@
 <template>
   <q-page
     :style-fn="pageStyle"
+    :padding="$q.screen.lt.md"
     @wheel="onWheel"
   >
     <q-carousel
@@ -115,4 +116,15 @@ export default defineComponent({
 
 :deep(.write-up)
   font-size: 24px
+
+@media screen and (max-width: $breakpoint-xs-max)
+  :deep(.title)
+    font-size: 28px
+
+  :deep(.subtitle)
+    font-size: 20px
+
+  :deep(.write-up)
+    font-size: 16px
+
 </style>

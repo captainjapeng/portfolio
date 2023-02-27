@@ -1,12 +1,13 @@
 <template>
   <div
     ref="containerRef"
-    class="fit"
+    class="fit overflow-hidden"
   />
 </template>
 
 <script lang="ts">
 import { defineComponent, onBeforeUnmount, onMounted, ref } from 'vue'
+import { Screen } from 'quasar'
 import * as THREE from 'three'
 
 const COLORS = [
@@ -94,7 +95,7 @@ export default defineComponent({
 
       scene = new THREE.Scene()
       camera = new THREE.PerspectiveCamera(45, clientWidth / clientHeight, 0.1, 10000)
-      camera.position.set(0, 0, 3500)
+      camera.position.set(0, 0, Screen.xs ? 2000 : 3500)
       scene.add(camera)
 
       const light = new THREE.AmbientLight()
@@ -106,7 +107,8 @@ export default defineComponent({
       geometry.index = itemGeom.index
       geometry.attributes = itemGeom.attributes
 
-      const particleCount = 2000, translateDelta = 5
+      const particleCount = Screen.xs ? 1000 : 2000,
+        translateDelta = Screen.xs ? 2 : 5
       const sizeArray = new Float32Array(particleCount)
       const translateArray = new Float32Array(particleCount * 3)
       const colorArray = new Float32Array(particleCount)
