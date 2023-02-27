@@ -84,7 +84,7 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   emits: ['next'],
   setup() {
-    const visible = ref(true)
+    const visible = ref(false)
 
     const galaxies = [
       {
