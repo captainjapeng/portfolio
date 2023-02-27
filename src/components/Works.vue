@@ -37,7 +37,8 @@
     persistent
     maximized
   >
-    <q-card class="bg-black flex flex-center">
+    <background class="bg-black absolute-full" />
+    <q-card class="bg-transparent  flex flex-center">
       <div class="absolute-top-right">
         <q-btn
           v-close-popup
@@ -80,8 +81,10 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import Background from 'src/components/Background.vue'
 
 export default defineComponent({
+  components: { Background },
   emits: ['next'],
   setup() {
     const visible = ref(false)

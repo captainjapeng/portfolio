@@ -52,6 +52,8 @@
       </q-toolbar>
     </q-header>
 
+    <background class="absolute-full" />
+
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -59,11 +61,12 @@
 </template>
 
 <script lang="ts">
+import Background from 'src/components/Background.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'MainLayout',
-
+  components: { Background },
   setup() {
     return {}
   }

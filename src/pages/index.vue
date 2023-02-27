@@ -11,7 +11,7 @@
       animated
       swipeable
       navigation
-      class="fit bg-black text-white"
+      class="fit bg-transparent text-white"
     >
       <q-carousel-slide
         name="intro"
