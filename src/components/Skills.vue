@@ -52,8 +52,9 @@
         dark
         class="fit"
         style="max-height: 90vh"
+        content-style="display: flex; align-items: center;"
       >
-        <div>
+        <div class="full-width">
           <div
             v-for="galaxy, idx in galaxies"
             :key="idx"
@@ -72,10 +73,7 @@
                   :key="`${idx}-${contentIdx}`"
                   class="content col-auto"
                 >
-                  <q-avatar
-                    rounded
-                    :size="$q.screen.xs ? `48px` : `64px`"
-                  >
+                  <q-avatar rounded>
                     <q-img
                       v-if="content.icon"
                       :src="`/stack/${content.icon}`"
@@ -178,20 +176,33 @@ export default defineComponent({
 
 <style lang="sass" scoped>
 .galaxy-name
-  font-size: 24px
+  font-size: 30px
   text-align: right
 
 .content
-  font-size: 16px
-  line-height: 16px
+  font-size: 20px
+  line-height: 20px
   text-align: center
-  width: 8%
+  width: 10%
 
 .q-avatar
+  font-size: 96px
   background-color: white
 
   :deep(img)
     filter: drop-shadow(0 0 2px rgba(black, 0.5))
+
+@media screen and (max-width: $breakpoint-md-max)
+  .galaxy-name
+    font-size: 24px
+
+  .q-avatar
+    font-size: 64px
+
+  .content
+    font-size: 16px
+    line-height: 16px
+    width: 9%
 
 @media screen and (max-width: $breakpoint-sm-max)
   .galaxy-name
@@ -203,5 +214,8 @@ export default defineComponent({
     line-height: 12px
     text-align: center
     width: 20%
+
+  .q-avatar
+    font-size: 48px
 
 </style>
