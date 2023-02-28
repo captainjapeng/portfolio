@@ -9,6 +9,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 const { configure } = require('quasar/wrappers')
+require('dotenv').config()
 
 module.exports = configure(function(/* ctx */) {
   return {
@@ -57,7 +58,7 @@ module.exports = configure(function(/* ctx */) {
         node: 'node16'
       },
 
-      vueRouterMode: 'hash' // available values: 'hash', 'history'
+      vueRouterMode: 'hash', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -66,7 +67,9 @@ module.exports = configure(function(/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      // env: {},
+      env: {
+        CAPTCHA_SITE_KEY: process.env.CAPTCHA_SITE_KEY
+      }
       // rawDefine: {}
       // ignorePublicFolder: true,
       // minify: false,
@@ -84,7 +87,13 @@ module.exports = configure(function(/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
+      proxy: {
+        '/api': {
+          target: 'http://localhost:8787',
+          changeOrigin: true
+        }
+      }
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -102,7 +111,7 @@ module.exports = configure(function(/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Notify', 'LocalStorage', 'Dialog']
     },
 
     animations: 'all', // --- includes all animations

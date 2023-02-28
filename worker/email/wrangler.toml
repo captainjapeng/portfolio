@@ -1,0 +1,7 @@
+name = "email"
+main = "src/index.ts"
+compatibility_date = "2023-02-28"
+
+workers_dev = true
+route = { pattern = "jasperagrante.com/api/*", zone_name = "jasperagrante.com" }
+
