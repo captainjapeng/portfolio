@@ -13,6 +13,7 @@
       animated
       swipeable
       navigation
+      keep-alive
       class="fit bg-transparent text-white"
     >
       <q-carousel-slide
