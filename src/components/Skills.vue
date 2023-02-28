@@ -12,7 +12,7 @@
           <q-btn
             label="Explore"
             color="white"
-            :size="$q.screen.xs ? `md`: `xl`"
+            :size="$q.screen.xs ? `md` : `xl`"
             outline
             rounded
             class="q-px-xl"
@@ -21,7 +21,7 @@
           <q-btn
             label="Contact Me"
             color="white"
-            :size="$q.screen.xs ? `md`: `xl`"
+            :size="$q.screen.xs ? `md` : `xl`"
             outline
             rounded
             class="q-px-xl"
@@ -44,6 +44,7 @@
           color="white"
           label="Close"
           flat
+          style="z-index: 1"
         />
       </div>
       <q-scroll-area
@@ -64,7 +65,7 @@
             <div class="col">
               <div
                 class="row q-col-gutter-md"
-                :class="{'justify-center': $q.screen.lt.md}"
+                :class="{ 'justify-center': $q.screen.lt.md }"
               >
                 <div
                   v-for="content, contentIdx in galaxy.contents"
@@ -73,7 +74,7 @@
                 >
                   <q-avatar
                     rounded
-                    :size="$q.screen.xs ? `48px` :`64px`"
+                    :size="$q.screen.xs ? `48px` : `64px`"
                   >
                     <q-img
                       v-if="content.icon"
