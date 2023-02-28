@@ -108,9 +108,12 @@
                       </q-icon>
                     </div>
                   </div>
-                  <div class="short-description">
-                    {{ item.shortDescription }}
-                  </div>
+                  <!-- eslint-disable vue/no-v-html -->
+                  <div
+                    class="short-description"
+                    v-html="item.shortDescription"
+                  />
+                  <!-- eslint-enable vue/no-v-html -->
                   <div
                     v-if="item.employer"
                     class="tag"
@@ -225,7 +228,11 @@ export default defineComponent({
         year: '2023',
         media: { url: Portfolio, type: 'image' },
         link: { label: 'View Code', url: 'https://github.com/captainjapeng/portfolio' },
-        shortDescription: 'The source code for this website that you\'re viewing.'
+        shortDescription: 'The source code for this website that you\'re viewing. ' +
+          'Built using <a href="https://quasar.dev/" target="_blank">Quasar</a>, ' +
+          'Hosted on <a href="https://pages.cloudflare.com/" target="_blank">CF Pages</a>, ' +
+          'and email functionality by <a href="https://workers.cloudflare.com/" target="_blank">CF Worker</a> ' +
+          '& <a href="https://sendgrid.com/" target="_blank">Sendgrid</a> all for free.'
       },
       {
         title: 'Pinoy Fruit Slice',
