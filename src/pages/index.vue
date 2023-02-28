@@ -6,6 +6,7 @@
   >
     <q-carousel
       v-model="page"
+      control-color="primary"
       transition-prev="slide-down"
       transition-next="slide-up"
       vertical
@@ -18,26 +19,26 @@
         name="intro"
         class="flex flex-center"
       >
-        <intro @next="page=`about`" />
+        <intro @next="page = `about`" />
       </q-carousel-slide>
 
       <q-carousel-slide
         name="about"
         class="flex flex-center"
       >
-        <about @next="page=`works`" />
+        <about @next="page = `works`" />
       </q-carousel-slide>
       <q-carousel-slide
         name="works"
         class="flex flex-center"
       >
-        <works @next="page=`skills`" />
+        <works @next="page = `skills`" />
       </q-carousel-slide>
       <q-carousel-slide
         name="skills"
         class="flex flex-center"
       >
-        <skills @next="page=`contact`" />
+        <skills @next="page = `contact`" />
       </q-carousel-slide>
       <q-carousel-slide
         name="contact"
