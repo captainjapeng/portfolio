@@ -11,11 +11,11 @@
         <div class="row q-gutter-md">
           <q-btn
             label="Explore"
-            color="white"
+            color="orange"
             :size="$q.screen.xs ? `md` : `xl`"
             outline
             rounded
-            class="q-px-xl"
+            class="text-weight-bolder q-px-xl"
             @click="visible = true"
           />
           <q-btn

@@ -51,10 +51,10 @@
           :size="$q.screen.xs ? `md` : `xl`"
           type="submit"
           label="Submit"
-          color="white"
+          color="orange"
           outline
           rounded
-          class="q-px-xl"
+          class="text-weight-bolder q-px-xl"
         />
       </div>
     </q-form>
