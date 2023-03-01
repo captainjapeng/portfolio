@@ -85,7 +85,12 @@ export default defineComponent({
       page.value = route.params.page as string || 'intro'
     })
 
-    const onWheel = throttle(function(ev: WheelEvent) {
+    const onWheel = function(ev: WheelEvent) {
+      console.log('ev.deltaY', ev)
+      _onWheel(ev)
+    }
+
+    const _onWheel = throttle(function(ev: WheelEvent) {
       const delta = ev.deltaY // + for scroll down, - for scroll up
       const currIdx = PAGES.findIndex(el => page.value === el)
       const offset = delta / Math.abs(delta) // normalize value between -1 to 1
@@ -111,6 +116,7 @@ export default defineComponent({
   color: $primary
   font-size: 64px
   line-height: 1.1em
+  margin-bottom: 12px
   font-family: 'Nunito', sans-serif
   font-weight: 700
 
@@ -118,7 +124,17 @@ export default defineComponent({
   font-size: 28px
 
 :deep(.write-up)
-  font-size: 24px
+  font-size: 28px
+
+@media screen and (max-width: $breakpoint-md-max)
+  :deep(.title)
+    font-size: 42px
+
+  :deep(.subtitle)
+    font-size: 20px
+
+  :deep(.write-up)
+    font-size: 20px
 
 @media screen and (max-width: $breakpoint-xs-max)
   :deep(.title)
