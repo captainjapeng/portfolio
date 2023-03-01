@@ -54,7 +54,7 @@
         style="max-height: 90vh"
         content-style="display: flex; align-items: center;"
       >
-        <div class="full-width">
+        <div class="container full-width">
           <div
             v-for="galaxy, idx in galaxies"
             :key="idx"
@@ -205,17 +205,19 @@ export default defineComponent({
     width: 9%
 
 @media screen and (max-width: $breakpoint-sm-max)
+  .container
+    padding: 0 20px
   .galaxy-name
-    font-size: 18px
+    font-size: 30px
     text-align: center
 
   .content
-    font-size: 12px
-    line-height: 12px
+    font-size: 18px
+    line-height: 18px
     text-align: center
-    width: 20%
+    width: 25%
 
   .q-avatar
-    font-size: 48px
+    font-size: 64px
 
 </style>

@@ -242,7 +242,7 @@ export default defineComponent({
           poster: FruitNinjaPoster,
           type: 'video/mp4'
         },
-        link: { label: 'Visit Site', url: 'https://prismcode.tech/photobooth.html' },
+        link: { label: 'Visit Site', url: 'https://prismcode.tech/page15.html' },
         shortDescription: 'A Fruit Ninja like game but with a Pinoy twist!',
         disclaimer: 'Creative artworks not created by me.',
         employer: PrismCode

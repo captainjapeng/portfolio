@@ -110,6 +110,7 @@ export default defineComponent({
 :deep(.title)
   color: $primary
   font-size: 64px
+  line-height: 1.1em
   font-family: 'Nunito', sans-serif
   font-weight: 700
 
