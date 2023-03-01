@@ -90,7 +90,7 @@ export default defineComponent({
       const currIdx = PAGES.findIndex(el => page.value === el)
       const offset = delta / Math.abs(delta) // normalize value between -1 to 1
       const newIdx = Math.max(0, Math.min(currIdx + offset, PAGES.length - 1))
-      page.value = PAGES[newIdx]
+      page.value = PAGES[newIdx] || 'intro'
     }, 2000)
 
     function pageStyle(offset: number, height: number) {
