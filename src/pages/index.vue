@@ -124,7 +124,8 @@ export default defineComponent({
   font-size: 28px
 
 :deep(.write-up)
-  font-size: 28px
+  font-size: 24px
+  line-height: 1.2em
 
 @media screen and (max-width: $breakpoint-md-max)
   :deep(.title)
